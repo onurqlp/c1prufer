@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>telc C1–C2 Prüfertraining – Persönliche Übungsseite</title>
+<style>
+:root{
+  --bg:#f6f7fb;--card:#fff;--text:#1b1f2a;--muted:#667085;--line:#e6e8ef;
+  --accent:#6a4bbc;--accent2:#8a6be0;--ok:#177a4b;--warn:#b26a00;--bad:#b42318;
+  --shadow:0 8px 28px rgba(16,24,40,.08);--radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
+.topbar{display:flex;align-items:center;gap:14px;min-height:68px}
+.brand{font-weight:800;letter-spacing:-.02em}
+.badge{font-size:.78rem;padding:5px 9px;border-radius:999px;background:#efeafd;color:#5c3fb0;font-weight:700}
+nav{margin-left:auto;display:flex;gap:8px;overflow:auto}
+nav a{white-space:nowrap;text-decoration:none;color:var(--text);font-size:.9rem;padding:8px 10px;border-radius:10px}
+nav a:hover{background:#f0eef8}
+.hero{padding:34px 0 16px}
+.hero h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;margin:0 0 10px;letter-spacing:-.04em}
+.hero p{max-width:780px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:18px}
+.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+h2{font-size:1.3rem;margin:0 0 12px} h3{font-size:1rem;margin:16px 0 8px}
+.small{font-size:.88rem;color:var(--muted)}
+.kpi{display:flex;gap:10px;flex-wrap:wrap}
+.kpi span{background:#f3f0fb;border:1px solid #e5def8;color:#51369f;padding:8px 10px;border-radius:12px;font-weight:700;font-size:.88rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+button,.btn,select,input,textarea{font:inherit}
+button,.btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;cursor:pointer}
+button.primary,.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:hover{filter:brightness(.98)}
+.criteria{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.crit{border:1px solid var(--line);padding:10px;border-radius:12px;background:#fafafe;text-align:center;font-size:.86rem;font-weight:700}
+.phrase{border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin:8px 0;background:#fff;display:flex;gap:10px;align-items:flex-start}
+.phrase button{margin-left:auto;padding:5px 8px;font-size:.78rem}
+.phrase .de{font-weight:650}
+.phrase .tr{font-size:.84rem;color:var(--muted);margin-top:3px}
+label{display:block;font-size:.86rem;font-weight:700;margin:10px 0 6px}
+select,input,textarea{width:100%;border:1px solid #d7dae3;border-radius:12px;padding:10px;background:#fff}
+textarea{min-height:110px;resize:vertical}
+.output{white-space:pre-wrap;background:#101828;color:#fff;border-radius:14px;padding:14px;min-height:95px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rating{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.rating button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.flash{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fcfcff}
+.answer{display:none;margin-top:10px;color:#344054}
+.answer.show{display:block}
+.check{display:flex;gap:10px;align-items:flex-start;margin:9px 0}
+.check input{width:auto;margin-top:3px}
+footer{padding:32px 0 50px;color:var(--muted);font-size:.84rem}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 8px;border-radius:999px;background:#eef2ff;color:#4b5cc4}
+hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+@media(max-width:850px){
+ .span-8,.span-6,.span-4{grid-column:span 12}
+ .criteria{grid-template-columns:1fr 1fr}
+ nav{display:none}
+ .row{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .wrap{padding:0 12px}.card{padding:14px}.hero{padding-top:22px}
+ .criteria{grid-template-columns:1fr}
+ .rating{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap topbar">
+    <div class="brand">telc C1–C2 Prüfertraining</div>
+    <div class="badge">persönlich · offline</div>
+    <nav>
+      <a href="#quick">Kurzcheck</a><a href="#redemittel">Redemittel</a><a href="#bewertung">Bewerten</a><a href="#fragen">Schulung</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <h1>Kurze, sichere Bewertungssätze für die Schulung</h1>
+  <p>Mobile Übungsseite für C1/C2: Kriterien erkennen, kurze Begründungen formulieren, M10-orientiert bewerten und Redemittel aktiv abrufen.</p>
+</section>
+
+<section id="quick" class="grid">
+  <div class="card span-12">
+    <h2>1) Was muss im Kopf sitzen?</h2>
+    <div class="kpi">
+      <span>Aufgabengerechtheit</span><span>Flüssigkeit</span><span>Repertoire</span><span>Grammatische Richtigkeit</span><span>Aussprache & Intonation</span>
+    </div>
+    <p class="small">Merksatz: <b>Nicht nach Gefühl, sondern kriterienorientiert.</b> Inhaltliche Angemessenheit wird je Prüfungsteil betrachtet, sprachliche Angemessenheit über die mündliche Leistung insgesamt.</p>
+  </div>
+
+  <div class="card span-6">
+    <h2>C1 – Kernbild</h2>
+    <p><b>flüssig · spontan · flexibel · detailliert · gut strukturiert</b></p>
+    <ul>
+      <li>komplexe Sachverhalte klar und ausführlich darstellen</li>
+      <li>Positionen begründen und Gegenargumente angemessen aufnehmen</li>
+      <li>großes Repertoire; gelegentliche Umschreibungen sind möglich</li>
+      <li>hohe grammatische Kontrolle; einzelne Fehler v. a. in komplexen Strukturen möglich</li>
+    </ul>
+  </div>
+
+  <div class="card span-6">
+    <h2>C2 – Kernbild</h2>
+    <p><b>sehr flüssig · präzise · flexibel · nahezu mühelos · nuanciert</b></p>
+    <ul>
+      <li>komplexe Inhalte logisch und adressatenbezogen strukturieren</li>
+      <li>sehr breites, idiomatisches Repertoire und Bedeutungsnuancen</li>
+      <li>kaum grammatische Fehler, auch bei komplexer Sprache</li>
+      <li>natürliche Aussprache/Intonation; Nuancen durch Intonation</li>
+    </ul>
+  </div>
+</section>
+
+<section id="redemittel" class="grid" style="margin-top:16px">
+  <div class="card span-12">
+    <h2>2) Redemittel – kurze Bewertungssätze</h2>
+    <div class="row">
+      <div>
+        <label>Niveau</label>
+        <select id="levelSel"><option>C1</option><option>C2</option></select>
+      </div>
+      <div>
+        <label>Kriterium</label>
+        <select id="critSel">
+          <option>Aufgabengerechtheit</option><option>Flüssigkeit</option><option>Repertoire</option><option>Grammatische Richtigkeit</option><option>Aussprache und Intonation</option>
+        </select>
+      </div>
+    </div>
+    <div id="phrases"></div>
+  </div>
+
+  <div class="card span-12">
+    <h2>Schnellformeln für die Diskussion</h2>
+    <div class="grid">
+      <div class="span-4">
+        <h3>Positiv</h3>
+        <div class="phrase"><div><div class="de">„Das entspricht weitgehend dem Zielniveau.“</div><div class="tr">Hedef seviyeyi büyük ölçüde karşılıyor.</div></div></div>
+        <div class="phrase"><div><div class="de">„Die Leistung ist in diesem Kriterium überzeugend.“</div><div class="tr">Bu kriterde performans ikna edici.</div></div></div>
+      </div>
+      <div class="span-4">
+        <h3>Einschränkung</h3>
+        <div class="phrase"><div><div class="de">„Allerdings zeigt sich gelegentlich eine Einschränkung bei …“</div><div class="tr">Ancak zaman zaman ... alanında sınırlılık görülüyor.</div></div></div>
+        <div class="phrase"><div><div class="de">„Für eine A-Bewertung fehlt mir noch …“</div><div class="tr">A değerlendirmesi için bence hâlâ ... eksik.</div></div></div>
+      </div>
+      <div class="span-4">
+        <h3>Karar cümlesi</h3>
+        <div class="phrase"><div><div class="de">„Deshalb würde ich hier B vergeben.“</div><div class="tr">Bu nedenle burada B verirdim.</div></div></div>
+        <div class="phrase"><div><div class="de">„Insgesamt sehe ich die Leistung zwischen B und C, mit Tendenz zu B.“</div><div class="tr">Genel olarak B ile C arasında, B’ye yakın görüyorum.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bewertung" class="grid" style="margin-top:16px">
+  <div class="card span-8">
+    <h2>3) Video-Bewertungssimulator</h2>
+    <div class="row">
+      <div><label>Niveau</label><select id="simLevel"><option>C1</option><option>C2</option></select></div>
+      <div><label>Prüfungsteil</label><select id="partSel"></select></div>
+    </div>
+
+    <label>Beobachtung – Was habe ich gesehen/gehört?</label>
+    <textarea id="obs" placeholder="z. B. spricht weitgehend flüssig, wenige Suchpausen, gute Verknüpfungen ..."></textarea>
+
+    <div class="criteria" style="margin-top:12px">
+      <div class="crit">Aufgabe</div><div class="crit">Flüssigkeit</div><div class="crit">Repertoire</div><div class="crit">Grammatik</div><div class="crit">Aussprache</div>
+    </div>
+
+    <label>Bewertung A–D</label>
+    <div class="rating" id="rating">
+      <button data-r="A">A</button><button data-r="B">B</button><button data-r="C">C</button><button data-r="D">D</button>
+    </div>
+
+    <label>Kurze Begründung</label>
+    <textarea id="reason" placeholder="z. B. Die Kommunikation wirkt weitgehend natürlich; es gibt nur wenige Stockungen."></textarea>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+      <button class="primary" onclick="buildComment()">Bewertungssatz erstellen</button>
+      <button onclick="copyOut()">Kopieren</button>
+      <button onclick="clearSim()">Leeren</button>
+    </div>
+    <h3>Ausgabe</h3>
+    <div id="out" class="output">Noch keine Bewertung erstellt.</div>
+  </div>
+
+  <div class="card span-4">
+    <h2>M10-Merker</h2>
+    <p><span class="tag">C1</span> Aufgabengerechtheit getrennt für 1A, 1B, 2; sprachliche Kriterien zusammen.</p>
+    <p><span class="tag">C2</span> Aufgabengerechtheit getrennt für Teil 1 Vortrag und Teil 2 vertiefendes Gespräch; sprachliche Kriterien zusammen.</p>
+    <hr>
+    <h3>30-Sekunden-Struktur</h3>
+    <ol>
+      <li><b>Beobachtung:</b> Was konkret?</li>
+      <li><b>Kriterium:</b> Wohin gehört es?</li>
+      <li><b>Niveau:</b> Zielniveau erfüllt?</li>
+      <li><b>Urteil:</b> A/B/C/D + 1 Satz.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="grid" style="margin-top:16px">
+  <div class="card span-12">
+    <h2>4) Mini-Generator: aus Stichpunkten einen Prüfer-Satz bauen</h2>
+    <div class="row">
+      <div><label>Stärke</label><input id="strength" placeholder="z. B. klare Struktur, gute Argumentation"></div>
+      <div><label>Schwäche</label><input id="weakness" placeholder="z. B. gelegentliche Suchpausen"></div>
+    </div>
+    <div class="row">
+      <div><label>Kriterium</label><select id="genCrit">
+        <option>Aufgabengerechtheit</option><option>Flüssigkeit</option><option>Repertoire</option><option>Grammatische Richtigkeit</option><option>Aussprache und Intonation</option>
+      </select></div>
+      <div><label>Bewertung</label><select id="genRate"><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+    </div>
+    <button class="primary" style="margin-top:10px" onclick="genSentence()">Satz erzeugen</button>
+    <div id="genOut" class="output" style="margin-top:10px">—</div>
+  </div>
+</section>
+
+<section id="fragen" class="grid" style="margin-top:16px">
+  <div class="card span-8">
+    <h2>5) Schulung – typische Fragen</h2>
+    <div id="flashcards"></div>
+  </div>
+  <div class="card span-4">
+    <h2>Lizenzierungskriterien – eigener Check</h2>
+    <div class="check"><input type="checkbox"><div><b>Teilnahmevoraussetzungen erfüllt</b></div></div>
+    <div class="check"><input type="checkbox"><div><b>Amtlicher Lichtbildausweis dabei</b></div></div>
+    <div class="check"><input type="checkbox"><div><b>Vollständige Teilnahme</b></div></div>
+    <div class="check"><input type="checkbox"><div><b>Aktive und sachgerechte Beteiligung</b></div></div>
+    <div class="check"><input type="checkbox"><div><b>Kriteriengerechte Bewertung</b></div></div>
+    <div class="check"><input type="checkbox"><div><b>Rollenkompetenz demonstrieren</b></div></div>
+    <p class="small">Tipp: In der Schulung lieber kurz, kriteriumsbezogen und begründet sprechen als lange allgemein yorum yapmak.</p>
+  </div>
+</section>
+
+<section class="grid" style="margin-top:16px">
+  <div class="card span-12">
+    <h2>6) Eigene Musterbewertungen</h2>
+    <p class="small">Buraya daha sonra bana göndereceğin telc Musterbewertungen / Expertenkommentare eklenebilir. Şimdilik kendi kısa örneklerini saklamak için aşağıdaki alanı kullan.</p>
+    <textarea id="notes" placeholder="Eigene Musterformulierungen ..."></textarea>
+    <button onclick="saveNotes()">Auf diesem Gerät speichern</button>
+    <button onclick="downloadNotes()">Als TXT exportieren</button>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Persönliche Lernhilfe. Keine offizielle telc-Seite. Inhalte sind als Lernzusammenfassung und Formulierungshilfe aufgebaut.</div></footer>
+
+<script>
+const bank = {
+"C1":{
+"Aufgabengerechtheit":[
+["Die Aufgabe wird insgesamt adressatenbezogen und gut strukturiert erfüllt.","Görev genel olarak muhataba uygun ve iyi yapılandırılmış biçimde yerine getiriliyor."],
+["Die Position wird nachvollziehbar vertreten und mit passenden Beispielen bzw. Begründungen gestützt.","Görüş anlaşılır biçimde savunuluyor ve uygun örnek/gerekçelerle destekleniyor."],
+["In der Diskussion reagiert die Person spontan und angemessen auf Gegenargumente.","Tartışmada karşı argümanlara spontan ve uygun tepki veriyor."],
+["Die Aufgabe ist nur teilweise erfüllt; einzelne geforderte Aspekte bleiben unterentwickelt.","Görev kısmen yerine getirilmiş; bazı beklenen noktalar yeterince geliştirilmemiş."]
+],
+"Flüssigkeit":[
+["Die Person spricht weitgehend flüssig und in gleichmäßigem Tempo.","Aday büyük ölçüde akıcı ve dengeli tempoda konuşuyor."],
+["Es gibt nur wenige Suchpausen; der Redefluss bleibt insgesamt stabil.","Az sayıda kelime arama duraksaması var; konuşma akışı genel olarak stabil."],
+["Gelegentliche Stockungen beeinträchtigen die Kommunikation kaum.","Ara sıra takılmalar iletişimi neredeyse etkilemiyor."],
+["Das häufige Suchen nach Wörtern unterbricht den Redefluss deutlich.","Sık kelime arama konuşma akışını belirgin biçimde kesiyor."]
+],
+"Repertoire":[
+["Das sprachliche Repertoire ist breit und der Aufgabe angemessen.","Dil repertuvarı geniş ve göreve uygun."],
+["Die Person kann sich differenziert ausdrücken und nutzt passende Verknüpfungsmittel.","Aday kendini ayrıntılı ifade edebiliyor ve uygun bağlayıcılar kullanıyor."],
+["Gelegentliche Umschreibungen sind erkennbar, ohne die Kommunikation wesentlich einzuschränken.","Ara sıra dolaylı anlatım görülüyor ama iletişimi ciddi biçimde sınırlamıyor."],
+["Das Repertoire wirkt stellenweise eingeschränkt; Vereinfachungen treten mehrfach auf.","Repertuvar yer yer sınırlı; birden fazla sadeleştirme görülüyor."]
+],
+"Grammatische Richtigkeit":[
+["Die grammatische Kontrolle ist insgesamt hoch; Fehler treten vor allem in komplexeren Strukturen auf.","Gramer kontrolü genel olarak yüksek; hatalar daha çok karmaşık yapılarda."],
+["Einzelne Fehler fallen auf, beeinträchtigen die Verständlichkeit aber nicht.","Bazı hatalar fark ediliyor ama anlaşılabilirliği etkilemiyor."],
+["Die Person behält auch bei längeren Äußerungen weitgehend grammatische Kontrolle.","Aday uzun ifadelerde de büyük ölçüde gramer kontrolünü koruyor."],
+["Es treten mehrere Fehler auch außerhalb komplexer Strukturen auf.","Karmaşık yapıların dışında da birden fazla hata görülüyor."]
+],
+"Aussprache und Intonation":[
+["Die Aussprache ist klar und natürlich; die Intonation unterstützt die Verständlichkeit.","Telaffuz açık ve doğal; tonlama anlaşılabilirliği destekliyor."],
+["Ein Akzent ist hörbar, beeinträchtigt die Verständlichkeit jedoch nicht.","Aksan duyuluyor ancak anlaşılabilirliği bozmuyor."],
+["Gelegentlich ist erhöhte Aufmerksamkeit nötig, insgesamt bleibt die Person gut verständlich.","Ara sıra daha fazla dikkat gerekiyor ama genel olarak rahatça anlaşılabiliyor."],
+["Aussprachefehler erschweren das Verstehen stellenweise.","Telaffuz hataları yer yer anlamayı zorlaştırıyor."]
+]
+},
+"C2":{
+"Aufgabengerechtheit":[
+["Die Aufgabe wird nahezu durchgängig präzise, klar und logisch strukturiert erfüllt.","Görev neredeyse tamamen hassas, açık ve mantıklı şekilde yerine getiriliyor."],
+["Der Vortrag ist adressatenbezogen aufgebaut und hebt zentrale Punkte gezielt hervor.","Sunum muhataba göre yapılandırılmış ve temel noktaları bilinçli biçimde öne çıkarıyor."],
+["Auch schwierige Nachfragen werden souverän und inhaltlich differenziert aufgegriffen.","Zor ek sorular bile güvenli ve içerik açısından ayrıntılı ele alınıyor."],
+["Mehrere geforderte Merkmale der Aufgabe werden nicht ausreichend umgesetzt.","Görevin beklenen bazı özellikleri yeterince yerine getirilmiyor."]
+],
+"Flüssigkeit":[
+["Die Kommunikation wirkt natürlich, kohärent und nahezu mühelos.","İletişim doğal, tutarlı ve neredeyse zahmetsiz görünüyor."],
+["Die Person spricht sehr flüssig und spontan; Pausen stören die Kommunikation nicht.","Aday çok akıcı ve spontan konuşuyor; duraksamalar iletişimi bozmuyor."],
+["Es gibt sehr wenige Stockungen, der Redefluss bleibt durchgehend stabil.","Çok az takılma var; konuşma akışı sürekli stabil."],
+["Wiederholte Suchpausen mindern den Eindruck müheloser Kommunikation.","Tekrarlanan kelime arama duraksamaları zahmetsiz iletişim izlenimini azaltıyor."]
+],
+"Repertoire":[
+["Das Repertoire ist sehr breit, präzise und stilistisch flexibel.","Repertuvar çok geniş, hassas ve üslup açısından esnek."],
+["Idiomatiche bzw. nuancierende Mittel werden passend und sicher eingesetzt.","Deyimsel ve nüans veren araçlar uygun ve güvenli kullanılıyor."],
+["Die Person kann Bedeutungsnuancen differenziert ausdrücken, ohne sich sprachlich einzuschränken.","Aday ince anlam farklarını dilsel olarak kendini sınırlamadan ifade edebiliyor."],
+["Mehrfache Vereinfachungen und Umschreibungen zeigen eine gewisse Einschränkung des Repertoires.","Birden fazla sadeleştirme ve dolaylı anlatım repertuvarda belli bir sınırlılık gösteriyor."]
+],
+"Grammatische Richtigkeit":[
+["Die grammatische Kontrolle bleibt auch bei komplexen Strukturen sehr hoch.","Karmaşık yapılarda bile gramer kontrolü çok yüksek kalıyor."],
+["Es treten nur vereinzelte, kaum auffällige Fehler auf.","Sadece tekil ve zor fark edilen hatalar görülüyor."],
+["Die Person hält ein hohes Maß an Korrektheit durchgehend aufrecht.","Aday yüksek doğruluk düzeyini sürekli koruyor."],
+["Mehrere Fehler in komplexen und teilweise auch einfacheren Strukturen sprechen gegen eine A-Bewertung.","Karmaşık ve kısmen daha basit yapılardaki birden fazla hata A değerlendirmesine karşı bir işaret."]
+],
+"Aussprache und Intonation":[
+["Aussprache und Intonation wirken klar, natürlich und differenziert.","Telaffuz ve tonlama açık, doğal ve nüanslı."],
+["Die Intonation wird gezielt eingesetzt, um Bedeutungsnuancen zu markieren.","Tonlama ince anlam farklarını belirtmek için bilinçli kullanılıyor."],
+["Ein leichter Akzent ist vorhanden, die Verständlichkeit bleibt jedoch vollständig erhalten.","Hafif bir aksan var fakat anlaşılabilirlik tamamen korunuyor."],
+["Die Aussprache erfordert stellenweise erhöhte Aufmerksamkeit und wirkt nicht durchgehend natürlich.","Telaffuz yer yer daha fazla dikkat gerektiriyor ve her zaman doğal duyulmuyor."]
+]
+}
+};
+
+const flashes = [
+["Was ist die Grundlage der Bewertung?","Die GER-Deskriptoren und die telc-Bewertungskriterien. Nicht der persönliche Eindruck."],
+["Welche fünf Kriterien gibt es?","Aufgabengerechtheit, Flüssigkeit, Repertoire, grammatische Richtigkeit, Aussprache und Intonation."],
+["Wie wird Aufgabengerechtheit bewertet?","Getrennt nach Prüfungsteil; entscheidend sind Aufgabenerfüllung, aktive Beteiligung, Struktur und Adressatenbezug."],
+["Wie werden die sprachlichen Kriterien bewertet?","Für die mündliche Leistung insgesamt, nicht getrennt für jeden einzelnen Teil."],
+["Was ist bei Flüssigkeit wichtig?","Gleichmäßiges Tempo, wenig störendes Zögern, Kohärenz und natürlicher Redefluss."],
+["Ist schnelles Sprechen automatisch flüssig?","Nein. Flüssigkeit bedeutet nicht Geschwindigkeit, sondern stabilen, natürlichen Redefluss."],
+["Ist jedes Zögern negativ?","Nein. Natürliches Zögern ist normal; problematisch wird es, wenn der Redefluss oder das Verstehen gestört wird."],
+["Was ist Repertoire?","Breite, Angemessenheit, Präzision und Flexibilität von Wortschatz und sprachlichen Strukturen."],
+["Was ist der Kernunterschied C1/C2?","C2 ist präziser, nuancierter, flexibler und nahezu mühelos; C1 ist bereits flüssig, spontan und sehr leistungsfähig."],
+["Muss C2 muttersprachlich klingen?","Nein. Ein Akzent ist möglich; entscheidend sind Klarheit, Natürlichkeit und kommunikative Kontrolle."],
+["Was macht der Interlokutor?","Er leitet die Prüfung, gibt Übergänge und Impulse und achtet auf den Ablauf."],
+["Was macht der Assessor?","Er beobachtet und bewertet; je nach Format kann er sich begrenzt mit Fragen beteiligen."],
+["Dürfen sich Prüfer während der Prüfung beraten?","Die individuellen Bewertungen werden zunächst unabhängig festgehalten; der Austausch erfolgt nach der Prüfung."],
+["Müssen beide Prüfer am Ende exakt dieselbe Bewertung haben?","Nein. Sie reflektieren und können sich annähern, müssen aber nicht identisch bewerten."],
+["Was ist M10?","Der Bewertungsbogen, auf dem die Prüfenden ihre individuellen Bewertungen festhalten."],
+["Was ist S30?","Der Antwortbogen, auf den die individuellen Bewertungen nach der Prüfung übertragen werden."],
+["Was tun, wenn ein TN ins Stocken kommt?","Kurz und niveauangemessen mit einem offenen Impuls helfen, ohne die Leistung zu übernehmen."],
+["Was tun, wenn eine Person dominiert?","Die ruhigere Person gezielt einbeziehen, z. B. „Und Sie, was denken Sie?“"],
+["Wie formuliert man gute Prüferfragen?","Möglichst offen, natürlich und an das Gesagte anknüpfend."],
+["Was ist ein typischer Bewertungsfehler?","Teilnehmende miteinander zu vergleichen statt sie am Zielniveau und an den Kriterien zu messen."]
+];
+
+let currentRating = "";
+function renderPhrases(){
+  const l=document.getElementById("levelSel").value;
+  const c=document.getElementById("critSel").value;
+  const box=document.getElementById("phrases"); box.innerHTML="";
+  bank[l][c].forEach(([de,tr])=>{
+    const div=document.createElement("div"); div.className="phrase";
+    div.innerHTML=`<div><div class="de">${de}</div><div class="tr">${tr}</div></div><button>kopieren</button>`;
+    div.querySelector("button").onclick=()=>navigator.clipboard?.writeText(de);
+    box.appendChild(div);
+  });
+}
+document.getElementById("levelSel").onchange=renderPhrases;
+document.getElementById("critSel").onchange=renderPhrases;
+renderPhrases();
+
+function setParts(){
+  const l=document.getElementById("simLevel").value, s=document.getElementById("partSel");
+  const parts=l==="C1"?["Teil 1A – Präsentation","Teil 1B – Zusammenfassung/Anschlussfragen","Teil 2 – Diskussion","Gesamt – sprachliche Angemessenheit"]
+                       :["Teil 1 – Vortrag","Teil 2 – Vertiefendes Gespräch","Gesamt – sprachliche Angemessenheit"];
+  s.innerHTML=parts.map(x=>`<option>${x}</option>`).join("");
+}
+document.getElementById("simLevel").onchange=setParts; setParts();
+
+document.querySelectorAll("#rating button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#rating button").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active"); currentRating=b.dataset.r;
+});
+function buildComment(){
+  const level=document.getElementById("simLevel").value;
+  const part=document.getElementById("partSel").value;
+  const obs=document.getElementById("obs").value.trim();
+  const reason=document.getElementById("reason").value.trim();
+  const r=currentRating||"?";
+  let txt=`${level} – ${part}\nBewertung: ${r}\n`;
+  if(obs) txt+=`Beobachtung: ${obs}\n`;
+  if(reason) txt+=`Begründung: ${reason}\n`;
+  txt+=`Kurzurteil: Insgesamt würde ich hier ${r} vergeben, weil die beobachtete Leistung in diesem Bereich ${r==="A"?"(fast) durchgängig":r==="B"?"weitgehend":r==="C"?"nur teilweise":r==="D"?"kaum":"entsprechend"} dem Zielniveau entspricht.`;
+  document.getElementById("out").textContent=txt;
+}
+function copyOut(){navigator.clipboard?.writeText(document.getElementById("out").textContent)}
+function clearSim(){
+  document.getElementById("obs").value="";document.getElementById("reason").value="";document.getElementById("out").textContent="Noch keine Bewertung erstellt.";currentRating="";
+  document.querySelectorAll("#rating button").forEach(x=>x.classList.remove("active"));
+}
+function genSentence(){
+  const c=document.getElementById("genCrit").value,r=document.getElementById("genRate").value;
+  const s=document.getElementById("strength").value.trim(),w=document.getElementById("weakness").value.trim();
+  let txt=`Im Kriterium ${c} `;
+  if(s) txt+=`fällt positiv auf, dass ${s}. `;
+  if(w) txt+=`Allerdings zeigt sich ${w}. `;
+  txt+=`Insgesamt würde ich deshalb ${r} vergeben.`;
+  document.getElementById("genOut").textContent=txt;
+}
+function renderFlash(){
+  const box=document.getElementById("flashcards"); box.innerHTML="";
+  flashes.forEach((f,i)=>{
+    const d=document.createElement("div");d.className="flash";d.style.marginBottom="8px";
+    d.innerHTML=`<b>${i+1}. ${f[0]}</b><br><button style="margin-top:8px">Antwort zeigen</button><div class="answer">${f[1]}</div>`;
+    d.querySelector("button").onclick=()=>d.querySelector(".answer").classList.toggle("show");
+    box.appendChild(d);
+  });
+}
+renderFlash();
+
+function saveNotes(){localStorage.setItem("telc_notes",document.getElementById("notes").value);alert("Gespeichert.");}
+function downloadNotes(){
+  const blob=new Blob([document.getElementById("notes").value],{type:"text/plain;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="telc_musterbewertungen_notizen.txt";a.click();URL.revokeObjectURL(a.href);
+}
+document.getElementById("notes").value=localStorage.getItem("telc_notes")||"";
+</script>
+</body>
+</html>
